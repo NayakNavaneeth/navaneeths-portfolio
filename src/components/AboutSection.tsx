@@ -16,10 +16,7 @@ const AboutSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">About Me</p>
-        <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-12">
-          Get to <span className="text-gradient">Know Me</span>
-        </h2>
+        <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-8">About Me</p>
       </motion.div>
 
       <motion.div
