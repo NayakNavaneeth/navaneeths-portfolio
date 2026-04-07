@@ -147,19 +147,6 @@ const HeroSection = () => {
             </a>
           </motion.div>
 
-          {/* Stats strip */}
-          <motion.div variants={fadeUp} className="flex gap-8 mt-10 pt-8 border-t border-border/50">
-            {[
-              { value: "2+", label: "Projects" },
-              { value: "5+", label: "Skills" },
-              { value: "2024", label: "Since" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-2xl font-heading font-bold text-gradient">{stat.value}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* Right - Profile image */}
