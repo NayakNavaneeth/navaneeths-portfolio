@@ -14,7 +14,7 @@ const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">My Client</p>
+          <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">Portfolio</p>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-12">
             <span className="text-gradient">Projects</span>
           </h2>
