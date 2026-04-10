@@ -148,12 +148,13 @@ const ContactSection = () => {
             </div>
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_30px_-5px_hsl(187_100%_50%/0.4)] transition-all"
+              disabled={loading}
+              whileHover={{ scale: loading ? 1 : 1.01 }}
+              whileTap={{ scale: loading ? 1 : 0.98 }}
+              className="w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_30px_-5px_hsl(187_100%_50%/0.4)] transition-all disabled:opacity-70"
             >
-              <Send size={16} />
-              Send Message
+              {loading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+              {loading ? "Sending..." : "Send Message"}
             </motion.button>
           </motion.form>
         </div>
