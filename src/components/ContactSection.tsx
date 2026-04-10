@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, Github, Send, ArrowUpRight, Loader2 } from "lucide-react";
-import emailjs from "@emailjs/browser";
-import { toast } from "sonner";
+import { Mail, Phone, MapPin, Linkedin, Github, Send, ArrowUpRight } from "lucide-react";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "nayaknavaneeth111@gmail.com", href: "mailto:nayaknavaneeth111@gmail.com" },
@@ -25,24 +23,10 @@ const itemVariants = {
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [focused, setFocused] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    try {
-      await emailjs.send("service_lh3xzgn", "template_8iccp4m", {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
-      }, "FmJzYsbGAJ1jWvEIq");
-      toast.success("Message sent successfully!");
-      setForm({ name: "", email: "", message: "" });
-    } catch {
-      toast.error("Failed to send message. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+    window.location.href = `mailto:nayaknavaneeth111@gmail.com?subject=Contact from ${form.name}&body=${form.message}%0A%0AFrom: ${form.email}`;
   };
 
   return (
@@ -148,13 +132,12 @@ const ContactSection = () => {
             </div>
             <motion.button
               type="submit"
-              disabled={loading}
-              whileHover={{ scale: loading ? 1 : 1.01 }}
-              whileTap={{ scale: loading ? 1 : 0.98 }}
-              className="w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_30px_-5px_hsl(187_100%_50%/0.4)] transition-all disabled:opacity-70"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_30px_-5px_hsl(187_100%_50%/0.4)] transition-all"
             >
-              {loading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
-              {loading ? "Sending..." : "Send Message"}
+              <Send size={16} />
+              Send Message
             </motion.button>
           </motion.form>
         </div>
