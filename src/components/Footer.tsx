@@ -16,9 +16,6 @@ const Footer = () => (
         {/* Brand */}
         <div className="flex flex-col items-center md:items-start gap-2">
           <span className="text-xl font-heading font-bold text-gradient">NN</span>
-          <p className="text-xs text-muted-foreground flex items-center gap-1">
-            Made with <Heart size={12} className="text-primary" /> by Navaneeth Nayak
-          </p>
         </div>
 
         {/* Nav */}
