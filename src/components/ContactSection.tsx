@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 import { Mail, Phone, MapPin, Linkedin, Github, Send, ArrowUpRight } from "lucide-react";
 
 const contactInfo = [
