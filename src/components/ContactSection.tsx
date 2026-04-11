@@ -25,10 +25,25 @@ const itemVariants = {
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [focused, setFocused] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `mailto:nayaknavaneeth111@gmail.com?subject=Contact from ${form.name}&body=${form.message}%0A%0AFrom: ${form.email}`;
+    setLoading(true);
+    try {
+      await emailjs.send(
+        "service_lh3xzgn",
+        "template_8iccp4m",
+        { from_name: form.name, from_email: form.email, message: form.message },
+        "FmJzYsbGAJ1jWvEIq"
+      );
+      toast.success("Message sent successfully!");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
