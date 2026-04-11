@@ -14,9 +14,6 @@ const Footer = () => (
     <div className="container mx-auto px-6 relative z-10">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand */}
-        <div className="flex flex-col items-center md:items-start gap-2">
-          <span className="text-xl font-heading font-bold text-gradient">NN</span>
-        </div>
 
         {/* Nav */}
         <div className="flex items-center gap-6 text-sm text-muted-foreground">
