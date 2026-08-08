@@ -128,7 +128,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.p variants={fadeUp} className="text-muted-foreground max-w-lg mb-8 leading-relaxed">
-            Second-year undergraduate pursuing B.E. in Computer Science & Engineering (AI & ML) at Mangalore Institute of Technology and Engineering. Passionate about intelligent automation, robotics, and technology-driven solutions.
+            Third-year undergraduate pursuing B.E. in Computer Science & Engineering (AI & ML) at Mangalore Institute of Technology and Engineering. Passionate about intelligent automation, robotics, and technology-driven solutions.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
